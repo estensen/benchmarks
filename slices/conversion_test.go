@@ -11,21 +11,21 @@ func BenchmarkSliceConversion(b *testing.B) {
 	b.Run("bad", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			numbersToStringsBad(numbers)
+			NumbersToStringsBad(numbers)
 		}
 	})
 
 	b.Run("better", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			numbersToStringsBetter(numbers)
+			NumbersToStringsBetter(numbers)
 		}
 	})
 
 	b.Run("best", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			numbersToStringsBest(numbers)
+			NumbersToStringsBest(numbers)
 		}
 	})
 }
