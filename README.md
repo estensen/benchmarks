@@ -16,6 +16,8 @@ goarch: amd64
 BenchmarkConcatString/concat_string-12         	  109778	     10480 ns/op	   53488 B/op	      99 allocs/op
 BenchmarkConcatString/concat_buffer-12         	  795718	      1502 ns/op	    3440 B/op	       6 allocs/op
 BenchmarkConcatString/concat_builder-12        	 1378024	       882 ns/op	    2032 B/op	       7 allocs/op
+BenchmarkMatchString/match_string-12           	  339788	      3224 ns/op	    3706 B/op	      27 allocs/op
+BenchmarkMatchStringCompiled/match_string-12   	 1798116	       668 ns/op	       0 B/op	       0 allocs/op
 PASS
 ok  	_/Users/havard.anda.estensen/Developer/benchmarks/strings	4.749s
 ```
