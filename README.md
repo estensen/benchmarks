@@ -3,12 +3,14 @@ Measure Go performance
 
 ## Run
 ```bash
-$ go test -bench=. ./...
+❯ go version
+go version go1.17 darwin/amd64
+❯ go test -bench=. ./...
 goos: darwin
 goarch: amd64
 pkg: github.com/estensen/benchmarks/crypto
 cpu: Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz
-BenchmarkHashString/SHA256-12         	 5485546	       214.8 ns/op	      32 B/op	       1 allocs/op
+BenchmarkHashString/SHA256-12           	 5485546	       214.8 ns/op	      32 B/op	       1 allocs/op
 BenchmarkHashString/SHA256_directly-12         	 6502267	       180.3 ns/op	       0 B/op	       0 allocs/op
 BenchmarkHashString/BLAKE2b-12                 	 8641450	       137.4 ns/op	       0 B/op	       0 allocs/op
 PASS
