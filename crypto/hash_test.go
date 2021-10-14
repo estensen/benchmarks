@@ -29,6 +29,13 @@ func BenchmarkHashString(b *testing.B) {
 		}
 	})
 
+	b.Run("MD5", func(b *testing.B) {
+		b.ReportAllocs()
+		for i := 0; i < b.N; i++ {
+			MD5(word)
+		}
+	})
+
 	b.Run("xxHash", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {

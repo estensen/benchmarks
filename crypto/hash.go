@@ -1,6 +1,7 @@
 package crypto
 
 import (
+	"crypto/md5"
 	"crypto/sha256"
 
 	"github.com/cespare/xxhash/v2"
@@ -19,6 +20,10 @@ func SHA256Directly(input string) [32]byte {
 
 func BLAKE2b(input string) [32]byte {
 	return blake2b.Sum256([]byte(input))
+}
+
+func MD5(input string) [16]byte {
+	return md5.Sum([]byte(input))
 }
 
 func xxHash(input string) uint64 {
