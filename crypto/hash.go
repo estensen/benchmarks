@@ -3,6 +3,7 @@ package crypto
 import (
 	"crypto/sha256"
 
+	"github.com/cespare/xxhash/v2"
 	"golang.org/x/crypto/blake2b"
 )
 
@@ -18,4 +19,8 @@ func SHA256Directly(input string) [32]byte {
 
 func BLAKE2b(input string) [32]byte {
 	return blake2b.Sum256([]byte(input))
+}
+
+func xxHash(input string) uint64 {
+	return xxhash.Sum64([]byte(input))
 }

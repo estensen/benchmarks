@@ -28,6 +28,13 @@ func BenchmarkHashString(b *testing.B) {
 			BLAKE2b(word)
 		}
 	})
+
+	b.Run("xxHash", func(b *testing.B) {
+		b.ReportAllocs()
+		for i := 0; i < b.N; i++ {
+			xxHash(word)
+		}
+	})
 }
 
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
