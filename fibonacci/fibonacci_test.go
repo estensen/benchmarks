@@ -47,3 +47,27 @@ func TestSequentialFibonacci(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkRecursiveFibonacci_10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RecursiveFibonacci(10)
+	}
+}
+
+func BenchmarkRecursiveFibonacci_20(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RecursiveFibonacci(20)
+	}
+}
+
+func BenchmarkSequentialFibonacci_10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SequentialFibonacci(10)
+	}
+}
+
+func BenchmarkSequentialFibonacci_20(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SequentialFibonacci(20)
+	}
+}
