@@ -32,3 +32,14 @@ func ConcatBuilder(words []string) string {
 
 	return builder.String()
 }
+
+func ConcatGrownBuilder(words []string) string {
+	var builder strings.Builder
+	builder.Grow(len(words))
+
+	for _, word := range words {
+		builder.WriteString(word)
+	}
+
+	return builder.String()
+}

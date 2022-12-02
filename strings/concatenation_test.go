@@ -6,6 +6,7 @@ import (
 )
 
 const wordlength = 10
+
 var letters = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 func BenchmarkConcatString(b *testing.B) {
@@ -32,6 +33,13 @@ func BenchmarkConcatString(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
 			ConcatBuilder(words)
+		}
+	})
+
+	b.Run("concat grown builder", func(b *testing.B) {
+		b.ReportAllocs()
+		for i := 0; i < b.N; i++ {
+			ConcatGrownBuilder(words)
 		}
 	})
 }
