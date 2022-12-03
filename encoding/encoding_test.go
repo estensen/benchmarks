@@ -26,17 +26,21 @@ func BenchmarkByteToHex(b *testing.B) {
 			name:        "50 bytes",
 			randomBytes: GenerateRandomBytes(50),
 		},
+		{
+			name:        "100 bytes",
+			randomBytes: GenerateRandomBytes(100),
+		},
 	}
 
 	for _, bm := range benchmarks {
-		b.Run("encode bytes to hex string with fmt.Sprintf", func(b *testing.B) {
+		b.Run("encode bytes to hex string with fmt.Sprintf for "+bm.name, func(b *testing.B) {
 			b.ReportAllocs()
 			for i := 0; i < b.N; i++ {
 				ByteToHexStringSprintf(bm.randomBytes)
 			}
 		})
 
-		b.Run("encode bytes to hex string with hex.EncodeToString", func(b *testing.B) {
+		b.Run("encode bytes to hex string with hex.EncodeToString for "+bm.name, func(b *testing.B) {
 			b.ReportAllocs()
 			for i := 0; i < b.N; i++ {
 				ByteToHexStringHex(bm.randomBytes)
